@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { Repairs } from './components/Repairs';
 import reportWebVitals from './reportWebVitals';
 
+
+// invoking the Repairs FN happens below with
+// "<Repairs />>"
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Repairs />      
   </React.StrictMode>,
   document.getElementById('root')
 );
