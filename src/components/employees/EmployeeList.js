@@ -27,7 +27,7 @@ export const EmployeeList = () => {
     useEffect( 
         () => {
             const theSpecialties = employees.map(emp => emp.specialty)
-                setSpecial(theSpecialties.join(","))
+                setSpecial(theSpecialties.join(", "))
         }, 
     [employees]
     )

@@ -4,6 +4,7 @@
 import React from "react"
 import { CustomerList } from "./customers/CustomerList.js"
 import { EmployeeList } from "./employees/EmployeeList.js"
+import { TicketList } from "./serviceTickets/TicketList.js"
 
  /* define and export a component named for the module 
       whatever this FN returns will be the HTML
@@ -23,10 +24,16 @@ import { EmployeeList } from "./employees/EmployeeList.js"
      return (
          <>
           <h1>Honey Rae's Repair Shoppe</h1>
+
+          
           <h2>Customer List</h2>
           <CustomerList />
+
           <h2>Employee List</h2>
           <EmployeeList />
+
+          <h2>Service Tickets</h2>
+          <TicketList />
          </>
      )
  }
