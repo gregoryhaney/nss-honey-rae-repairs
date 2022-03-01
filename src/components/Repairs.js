@@ -2,9 +2,9 @@
  // this allows us to use all the features
  // that come with the React library
 import React from "react"
-import { CustomerList } from "./customers/CustomerList.js"
-import { EmployeeList } from "./employees/EmployeeList.js"
-import { TicketList } from "./serviceTickets/TicketList.js"
+import { NavBar } from "./nav/NavBar.js"
+import { ApplicationViews } from "./ApplicationViews.js"
+import "./Repairs.css"
 
  /* define and export a component named for the module 
       whatever this FN returns will be the HTML
@@ -23,9 +23,21 @@ import { TicketList } from "./serviceTickets/TicketList.js"
      // HTML we want to see in browser within the parenthesis
      return (
          <>
+         
+         <NavBar />
           <h1>Honey Rae's Repair Shoppe</h1>
 
-          
+          <ApplicationViews />
+
+        
+         </>
+     )
+ }
+ 
+ 
+/* these are removed / not needed upon implementation
+    of ApplicationViews:
+            
           <h2>Customer List</h2>
           <CustomerList />
 
@@ -34,11 +46,13 @@ import { TicketList } from "./serviceTickets/TicketList.js"
 
           <h2>Service Tickets</h2>
           <TicketList />
-         </>
-     )
- }
- 
- 
+
+    also, delete their associated imports:
+    import { CustomerList } from "./customers/CustomerList.js"
+    import { EmployeeList } from "./employees/EmployeeList.js"
+    import { TicketList } from "./serviceTickets/TicketList.js"
+*/
+
  /* 
      explanation for the line of code:
  
