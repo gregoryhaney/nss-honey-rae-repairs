@@ -1,10 +1,13 @@
 
  // this allows us to use all the features
  // that come with the React library
-import React from "react"
-import { NavBar } from "./nav/NavBar.js"
-import { ApplicationViews } from "./ApplicationViews.js"
-import "./Repairs.css"
+ import React from "react";
+ import { Route, Redirect } from "react-router-dom";
+ import { ApplicationViews } from "./ApplicationViews";
+ import { NavBar } from "./nav/NavBar";
+ import { Login } from "./auth/Login";
+ import { Register } from "./auth/Register";
+ import "./Repairs.css";
 
  /* define and export a component named for the module 
       whatever this FN returns will be the HTML
@@ -17,23 +20,35 @@ import "./Repairs.css"
  React takes JSX, converts it to JavaScript
  code, and renders the HTML from that.
  */
- export const Repairs = () => {
+
 
      // required is return with parenthesis with the
      // HTML we want to see in browser within the parenthesis
-     return (
-         <>
-         
-         <NavBar />
-          <h1>Honey Rae's Repair Shoppe</h1>
+export const Repairs = () => (
+    <>
+        <Route
+        render={() => {
+            if (localStorage.getItem("honey_customer")) {
+            return (
+                <>
+                <NavBar />
+                <ApplicationViews />
+                </>
+            );
+            } else {
+            return <Redirect to="/login" />;
+            }
+        }}
+        />
 
-          <ApplicationViews />
-
-        
-         </>
-     )
- }
- 
+        <Route path="/login">
+        <Login />
+        </Route>
+        <Route path="/register">
+        <Register />
+        </Route>
+    </>
+);
  
 /* these are removed / not needed upon implementation
     of ApplicationViews:
