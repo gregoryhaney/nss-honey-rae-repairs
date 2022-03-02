@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
-//import "./Tickets.css"
+import "./Tickets.css"
 
 export const TicketList = () => {
     const [active, setActive] = useState("")
@@ -24,22 +24,22 @@ export const TicketList = () => {
         }, [tickets])
 
 
-    return (
-    <>
-        <button onClick={() => history.push("/tickets/create")}>Create Ticket</button>
-            {active}
-            {
-            tickets.map(
-                (ticket) => {
-                    return <div key={`ticket--${ticket.id}`}>
-                        <p className={`ticket ${ticket.emergency ? 'emergency' : ''}`}>
-                            {ticket.emergency ? "*" : ""} {ticket.description} submitted by customer# {ticket.customerId}     
-                        </p>
-                        </div>
-                   
+        return (
+            <>
+                <button onClick={() => history.push("/tickets/create")}>Create Ticket</button>
+                    {active}
+                    {
+                    tickets.map(
+                        (ticket) => {
+                            return <div key={`ticket--${ticket.id}`}>
+                                <p className={`ticket ${ticket.emergency ? 'emergency' : ''}`}>
+                                    {ticket.emergency ? "🚑" : ""} {ticket.description} submitted by customer# {ticket.customerId}     
+                                </p>
+                                </div>
+                           
+                        }
+                    )
                 }
+            </>
             )
         }
-    </>
-    )
-}
