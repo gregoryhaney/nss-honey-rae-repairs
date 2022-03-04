@@ -3,10 +3,15 @@
 
 /*Typography
 --------------------------------------------------------------*/
-body,
+body {
+  background-color: rgb(241, 240, 238);
+}
+
+
 button,
 input,
 select,
+
 textarea {
   color: #404040;
   font-family: "Comfortaa", Arial, sans-serif;
