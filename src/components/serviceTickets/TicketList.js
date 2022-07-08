@@ -5,9 +5,9 @@ import "./Tickets.css"
 
 
 export const TicketList = () => {
-    const [active, setActive] = useState("")
+    const [ active, setActive ] = useState("")
+    const [ tickets, updateTickets ] = useState([])
     const history = useHistory()
-    const [tickets, updateTickets] = useState([])
 
     const getTickets = () => {
         fetch("http://localhost:8088/serviceTickets?_expand=customer&_expand=employee")
@@ -26,14 +26,9 @@ export const TicketList = () => {
     }
 
         useEffect(
-            () => {
-                // fetch("http://localhost:8088/serviceTickets?_expand=customer&_expand=employee")
-                // .then(res => res.json())
-                // .then((data) => {
-                //     updateTickets(data)
-                getTickets()
-                
-            },
+                () => {                
+                    getTickets()                
+                },
             []
         )       
 
@@ -58,11 +53,11 @@ export const TicketList = () => {
                                     }}>Delete Ticket</button>
                                     
                                 </p>
-                                </div>
+                            </div>
                            
                         }
                     )
-                }
+                    }
             </>
-            )
-        }
+        )
+}

@@ -3,15 +3,15 @@ import { useHistory } from "react-router-dom";
 
 export const EmployeeForm = () => {
     
-    const [employees, updateEmployee] = useState({
+    const [ employees, updateEmployee ] = useState({
         name: "",
         specialty: ""
     });
     const history = useHistory()
 
-        // the object we wanna sent to the API when new form is submitted:
-        // use the preventDefault to prevent default behavior of the
-        // browser after the form is submitted.
+        // The object to send to the API when new form is submitted:
+        //  Use the preventDefault to prevent default behavior of the
+        //  browser after the form is submitted.
     const hireEmployee = (evt) => {
         evt.preventDefault()
 

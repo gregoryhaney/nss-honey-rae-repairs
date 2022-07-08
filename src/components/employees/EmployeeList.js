@@ -3,8 +3,8 @@ import { useHistory, Link } from "react-router-dom"
 
 export const EmployeeList = () => {
     
-    const [employees, changeEmployee] = useState([])
-    const [specialties, setSpecial] = useState("")
+    const [ employees, changeEmployee ] = useState([])
+    const [ specialties, setSpecial ] = useState("")
     const history = useHistory()
 
     useEffect(
@@ -22,7 +22,7 @@ export const EmployeeList = () => {
 
 /*
             1. Use .map() to get the specialty of each employee
-            2. Then update a state variable to be a comma-separated string
+            2. Update a state variable to be a comma-separated string
                 (e.g. "iPhone, Printers, ...")
         */
 

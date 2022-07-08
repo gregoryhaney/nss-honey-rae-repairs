@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 
 export const Employee = () => {
     // new state variable to hold individual employee
-    // after he/she has been retrieved via the API
+    // after employee has been retrieved via the API
     // by default, it will be an empty object
     const [ employee, assignEmp ] = useState({})
     const { employeeId } = useParams()

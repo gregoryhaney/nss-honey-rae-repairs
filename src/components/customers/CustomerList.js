@@ -1,23 +1,21 @@
 
- // this allows us to use all the features
- // that come with the React library
+ // These imports allow us to use all the features
+ // that come with the React library.
  import React, { useEffect, useState } from "react"
 
- /* define and export a component named for the module 
-      whatever this FN returns will be the HTML
-      generated in the browser
- 
- in React components, the HTML that we write
- is called JSX (a language that looks a lot
- like HTML but with some differences).
- 
- React takes JSX, converts it to JavaScript
- code, and renders the HTML from that.
+ /* Define and export a component named for the module. 
+      Whatever this FN returns will be the HTML
+      generated in the browser. 
+    In React components, the HTML that we write
+        is called JSX (a language that looks much
+        like HTML but with some differences). 
+    React takes JSX, converts it to JavaScript
+        code, and renders the HTML from that.
  */
  export const CustomerList = () => {
  
-     const [customers, setCustomers] = useState([])
-     const [totalCustomerMessage, updateMessage] = useState("")
+     const [ customers, setCustomers ] = useState([])
+     const [ totalCustomerMessage, updateMessage ] = useState("")
  
      // instructions on useEffect are below this entire FN
      useEffect(
@@ -42,13 +40,11 @@
         },
         [customers]
     )
-
-
  
-     // required is return with parenthesis with the
+     // Required is 'return' with parenthesis with the
      // HTML we want to see in browser within the parenthesis
 
-     // adding the 'key' below in the return is necessary to clear a 
+     // Adding the 'key' below in the return is necessary to clear a 
      // warning error in DevTools about uniqueness of items. React
      // won't use the "id" from each record to show uniqueness. It
      // uses its 'key' for this, so we're assigning the 'id' from each
@@ -72,7 +68,7 @@
  /* 
      explanation for the line of code:
  
-     const [customers, setCustomers] = useState([])
+     const [ customers, setCustomers ] = useState([])
  
      it takes one argument.
          want to render list of customers from API.
@@ -91,16 +87,16 @@
      there is an array on the left side of the
      expression:
  
-             const [customers, setCustomers] = useState([])
+             const [ customers, setCustomers ] = useState([])
  
-     in the array that it returns, it gives you the initial
-     value (an empty array). the variable "customers"
+     In the array that it returns, it gives you the initial
+     value (an empty array). The variable "customers"
      will be used to hold the returned value.
-     the 2nd thing it returns is a FN to set the value
+     The 2nd thing it returns is a FN to set the value
      of 'customers' later in the code (Modify the
      state) - so 'setCustomers' in this case
  
-     we have established a state variable to hold the
+     Ee have established a state variable to hold the
      state of 'customers' from the API in our 
      application state. We now need to go get it.
  
@@ -108,7 +104,7 @@
  
  
  /*
-         next is another built-in FN of React. This
+         Next is another built-in FN of React. This
      is another 'hook' (starts with the word 'use').
      this FN is 'useEffect()'. 
      This FN takes two arguments:
@@ -141,20 +137,20 @@
  */
  
  /*
-     so, we now have state data on customers sitting
+     So, we now have state data on customers sitting
      in the 'customers' variable and living in this
      component.
-     we can iterate through the customers and 
+     We can iterate through the customers and 
      generate the HTML, which goes above inside the
      parenthesis following 'return'.
-     still doing string interpolation, but without
+     Still doing string interpolation, but without
      the dollar sign before curly braces for a 
      literal.
-     we're going to iterate through customers, 
+     We're going to iterate through customers, 
      converting them from objects to HTML using JSX.
-     we need the array method '.map()' as the conversion
+     We need the array method '.map()' as the conversion
      tool
-     a limitation with JSX is that we can return
+     A limitation with JSX is that we can return
      ONLY one thing. The return above is already doing
      the <h1>:
  
@@ -162,7 +158,7 @@
          <h1>Honey Rae's Repair Shoppe</h1>
      )
         
-     so it cannot also return the customers
+     So it cannot also return the customers
      in a list of <h2> tags as desired. 
          To combat this, we'll take all the headings 
      and put them into a single element, and that's
